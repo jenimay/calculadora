@@ -22,15 +22,15 @@ programa {
       resultado = n1 + n2
       escreva ("O resultado dos valores ", n1, " + ", n2, " = ", resultado)
 
-      //Executando a subtraÁ„o
+      //Executando a subtra√ß√£o
       resultado = n1 - n2
       escreva ("\nO resultado dos valores ", n1, " - ", n2, " = ", resultado)
 
-      //EXecutando a multiplicaÁ„o
+      //EXecutando a multiplica√ß√£o
       resultado = n1 * n2
       escreva ("\nO resultado dos valores ", n1, " * ", n2, " = ", resultado)
 
-      //Executando a Divis„o
+      //Executando a Divis√£o
       resultado2= n1 / n2
       escreva ("\nO resultado dos valores ", n1, " / ", n2, " = ", resultado2)
       
@@ -38,4 +38,26 @@ programa {
 
 
  }
+}
+
+
+
+
+programa 
+{
+	funcao inicio() 
+	{
+		inteiro numero, resultado, contador
+		
+		escreva("Informe um n√∫mero para ver sua tabuada: ")
+		leia(numero)
+
+		limpa()
+		
+		para (contador = 1; contador <= 10; contador++) 
+		{
+			resultado = numero * contador 
+			escreva (numero, " X ", contador, " = ", resultado , "\n")
+		}
+	}
 }
