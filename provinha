@@ -1,0 +1,178 @@
+programa {
+
+  inclua biblioteca Util
+
+    cadeia opcao, nome_cliente[8]
+    inteiro idade[8], quant = 0, n 
+
+    cadeia pesquisa
+
+
+    funcao inicio() {
+
+    limpa()
+
+    escreva(".**************************************************************************************.\n")
+    escreva("|                                 SISTEMA DE CADASTRO                                   |\n")
+    escreva("'**************************************************************************************'\n")
+
+    escreva(" 1 - Cadrastar novo cliente\n")
+    escreva(" 2 - Visualizar clienter cadastrados\n")
+    escreva(" 3 - Buscar usuário cadastrado\n")
+    escreva(" 4 - Sair do sistema\n")
+
+    escreva(".**************************************************************************************.\n")
+    escreva("Opção desejada: ")
+    leia(opcao)
+
+    escolha(opcao)
+    {
+        caso "1":
+        {
+            limpa()
+            escreva("Informe o nome do cliente:\n")
+            leia(nome_cliente[quant])
+
+
+            limpa()
+            escreva("Qual a idade do(a) cliente ", nome_cliente[quant], ":\n")
+            leia(idade[quant])
+
+
+            limpa()
+            quant++
+
+            //Exibe mensagem de usuário cadastrado com sucesso
+            escreva("AVISO: Usuário cadastrado com sucesso!")
+            Util.aguarde(3000)
+
+            //Retorna para o menu inicio
+            inicio()
+            pare
+        }
+
+        caso "2":
+        {
+          limpa()
+              limpa()
+              escreva(".**************************************************************************************.\n")
+              escreva("|                                 CLIENTES CADASTRADOS                                 |\n")
+              escreva("'**************************************************************************************'\n")
+
+              para(n = 0; n < quant; n++)
+              {
+                escreva("Nº: ", n+1, "-", nome_cliente[n], " - idade,", idade[n], "\n")
+              }
+
+              escreva(".**************************************************************************************.\n")
+              Util.aguarde(5000) //Aguarde 05 segundos
+              inicio()
+              pare
+        }
+
+        caso "3":
+        {
+          limpa()
+          escreva("Informe o nome a ser buscado:\n")
+          leia(pesquisa)
+
+          se(nome == )
+          pare
+        }
+
+
+
+
+
+
+
+
+
+
+
+        caso "4":
+        {
+              limpa()
+              escreva("Saindo do sistema em 05 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 04 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 03 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 02 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 01 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Até a próxima!!! \n\n\n")
+
+              pare
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+  }
+}
+
+}
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+programa 
+{
+
+
+    caracter sexo 
+
+    funcao inicio()
+    {
+        escreva("Qual o seu SEXO? [M/F]\n")
+        leia(sexo)
+        limpa()
+
+        se(sexo == "M" ou sexo == 'm')
+        {
+          escreva("Você é do sexo MASCULINO!")
+        }    
+        senao
+        {
+             se(sexo == 'F' ou sexo == 'f')
+             {
+              escreva("Você é do sexo FEMININO!")
+             }
+             senao
+             {
+              escreva("O sexo informado não foi reconhecido, tente novamente!")
+             }
+        
+       }
+   }
+}
