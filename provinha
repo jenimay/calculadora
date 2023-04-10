@@ -1,3 +1,6 @@
+
+ 
+
 programa {
 
   inclua biblioteca Util
@@ -76,9 +79,16 @@ programa {
           escreva("Informe o nome a ser buscado:\n")
           leia(pesquisa)
 
-          se(nome == )
-          pare
-        }
+         para (n = 0; n < quant; n++)
+         {
+             se (nome_cliente[n] == pesquisa)
+             {
+                   escreva("Usuário(a)", nome_cliente[n], " com idade ", idade[n], " encontrada na posição ", n+1, "\n")
+             }
+         }
+         escreva("-------------------------------\n\n")
+         Util.aguarde(3000)
+         inicio()
 
 
 
