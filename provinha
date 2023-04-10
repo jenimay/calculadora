@@ -4,9 +4,10 @@
 programa {
 
   inclua biblioteca Util
+  inclua biblioteca Texto
 
     cadeia opcao, nome_cliente[8]
-    inteiro idade[8], quant = 0, n 
+    inteiro idade[8], quant = 0, n, achei
 
     cadeia pesquisa
 
@@ -35,6 +36,7 @@ programa {
             limpa()
             escreva("Informe o nome do cliente:\n")
             leia(nome_cliente[quant])
+            nome_cliente[quant] = Texto.caixa_alta(nome_cliente[quant])      //Converte para caixa alta o nome recebido
 
 
             limpa()
@@ -47,7 +49,7 @@ programa {
 
             //Exibe mensagem de usuário cadastrado com sucesso
             escreva("AVISO: Usuário cadastrado com sucesso!")
-            Util.aguarde(3000)
+            Util.aguarde(700)
 
             //Retorna para o menu inicio
             inicio()
@@ -68,7 +70,7 @@ programa {
               }
 
               escreva(".**************************************************************************************.\n")
-              Util.aguarde(5000) //Aguarde 05 segundos
+              Util.aguarde(1000) //Aguarde 05 segundos
               inicio()
               pare
         }
@@ -76,28 +78,30 @@ programa {
         caso "3":
         {
           limpa()
+          achei = 0 //Reseta a variável ACHEI para limpar a pesquisa e funcionalidades
           escreva("Informe o nome a ser buscado:\n")
           leia(pesquisa)
 
-         para (n = 0; n < quant; n++)
-         {
-             se (nome_cliente[n] == pesquisa)
-             {
-                   escreva("Usuário(a)", nome_cliente[n], " com idade ", idade[n], " encontrada na posição ", n+1, "\n")
-             }
-         }
-         escreva("-------------------------------\n\n")
-         Util.aguarde(3000)
-         inicio()
+          para (n = 0; n < quant; n++)
+          {
+              se (nome_cliente[n] == pesquisa)
+              {
+                    achei = 1
+                    escreva("Usuário(a)", nome_cliente[n], " com idade ", idade[n], " encontrada na posição ", n+1, "\n")
+              }
+          }  
 
-
-
-
-
-
-
-
-
+          se(achei == 0)
+          {
+            limpa()
+            escreva("ATENÇÃO: Nenhum usuário foi encontrado na base de dados!")
+          }
+          
+          escreva("\n\n-------------------------------\n\n")
+          Util.aguarde(3000)
+          inicio()
+        
+        }
 
 
         caso "4":
@@ -142,10 +146,6 @@ programa {
     }
   }
 }
-
-}
-
-
 
 
 
