@@ -1,0 +1,17 @@
+programa {
+  funcao inicio() {
+
+    inteiro altura
+    cadeia 
+
+
+            limpa()
+            escreva("Informe a altura da parede:\n")
+            leia(altura)
+
+            se altura <4m 
+
+            
+   
+  }
+}
